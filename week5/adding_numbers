@@ -1,0 +1,16 @@
+import sys
+
+def add(filename):
+    sum = 0
+    with open(filename) as file:
+        line = file.readline()
+        while line:
+            sum += int(line)
+            line = file.readline()
+    file.close()
+    return sum
+
+if __name__ == "__main__":
+    fname = sys.argv[1]
+    print(f"Processing {fname}")
+    print(add(fname))
